@@ -17,5 +17,4 @@ table.table
         td= person.try(:email)
         td= person.try(:company).try(:name)
 
-
-
+= paginate @people, window: 2
