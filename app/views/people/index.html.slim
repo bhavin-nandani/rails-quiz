@@ -1,4 +1,8 @@
-h2 Viewing people
+.div.row
+  .col
+    h2.d-inline-block.mr-3 Persons
+    = link_to 'Add Person', new_person_path, class: 'btn btn-primary float-end'
+
 
 table.table
   thead
@@ -15,7 +19,7 @@ table.table
         td= person.try(:name)
         td= person.try(:phone)
         td= person.try(:email)
-        td= person.try(:company).try(:name)
+        td= link_to person.try(:company).try(:name), person.try(:company)
 
 
 

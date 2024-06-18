@@ -1,0 +1,19 @@
+.div.row
+  .col
+    h2.d-inline-block.mr-3 Companies
+    = link_to 'Add Company', new_company_path, class: 'btn btn-primary float-end'
+
+table.table
+  thead
+    tr
+      th[scope="col"] ID
+      th[scope="col"] Name
+      th[scope="col" colspan="3"] Actions
+  tbody
+    - @companies.each do |company|
+      tr
+        th[scope="row"]= company&.id
+        td= company.try(:name)
+        td= link_to 'Show', company, class: 'btn btn-sm btn-primary'
+        td= link_to 'Edit', edit_company_path(company), class: 'btn btn-sm btn-primary'
+        td= button_to 'Delete', company, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger', title: 'Delete'
