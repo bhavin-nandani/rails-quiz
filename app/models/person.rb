@@ -14,4 +14,7 @@
 class Person < ApplicationRecord
   
   belongs_to :company, optional: true
+
+  validates :name, :phone_number, :email, presence: true
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, uniqueness: true
 end
