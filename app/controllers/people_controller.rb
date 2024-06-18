@@ -1,7 +1,7 @@
 class PeopleController < ApplicationController
 
   def index
-    @people = Person.all
+    @people = Person.includes(:company).all
   end
 
   def new
