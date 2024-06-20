@@ -41,3 +41,6 @@ end
 
 # Use Redis for Action Cable
 gem "redis", "~> 4.0"
+
+# Use for pagination
+gem 'kaminari'
