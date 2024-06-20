@@ -6,10 +6,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :people
-      # get 'people', to: '/people#index', defaults: { format: 'json' }
-      get 'companies', to: '/companies#index', defaults: { format: 'json' }
-      post 'companies', to: '/companies#create', defaults: { format: 'json' }
-      # resources :companies, only: [:index]
+      resources :companies, only: [:index, :create], defaults: { format: 'json' }
     end
   end
 end
